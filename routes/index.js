@@ -104,6 +104,9 @@ router.get('/statsByLocation',function(req,res){
 router.get('/submitReport',function(req,res){
 	res.render('submitReport');
 });
+router.get('/check',function(req,res){
+	res.render('checkfb');
+});
 router.get('')
 
 module.exports = router;

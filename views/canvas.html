@@ -81,6 +81,29 @@ imageObj1.onload = function() {
 //     console.log("reaching here");
 // }, false);
 
+
+$(document).ready(function(){
+
+var url= c.toDataURL();
+  console.log(url);
+
+ $('#download').click(function(){
+
+ 	   //  downloadCanvas(this, 'c', 'test.png');
+
+ 	   //  var url = c.toDataURL('image/png');
+ 	   //   var url= c.toDataURL();
+
+ 	     $(this).attr("href", url);
+
+
+ 	     $(this).attr("download", "test.png");
+
+   		 console.log("reaching here", url);
+ })
+	
+})
+
   var url= c.toDataURL();
   console.log(url);
 

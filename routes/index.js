@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var async=require('async');
+var db=require('../db');
 var client = require('twilio')('AC527f6f20315f59a17999fd9eec6ebc93', '031bba489a2f19d928e0ab856f1e1265');
 var twitter = require('simple-twitter');
  twitter = new twitter('ESd7bNZnsmkf46EXDFO2Asw0T', //consumer key from twitter api
@@ -27,7 +28,7 @@ router.use(function timeLog(req, res, next) {
 router.get('/', function(req, res) {
   res.render('index');
 });
-router.post('/submit',function(req,res){
+router.post('/submitR',function(req,res){
 	async.parallel([
 			function(done){
 				//twitter
@@ -93,10 +94,15 @@ router.post('/submit',function(req,res){
 				res.render('canvas');
 		});
 });
+var db=require('../db');
 // define the about route
-router.get('/statsByTime', function(req, res) {
-  res.render('statsByTime');
+router.get('/statsByTime',function(req,res){
+	res.render('statsByTime',{data:"kuch B"});
 });
+router.post('/statsByLocation',function(req,res){
+	
+});
+
 router.get('/statsByLocation',function(req,res){
 	res.render('statsByLocation');
 });
@@ -109,7 +115,11 @@ router.get('/check',function(req,res){
 router.post('/sendUserData',function(req,res){
     console.log(" int the  user" , req.body);
 	res.render('submitReport',{data:req.body});
-});
-router.get('')
-
+});/*
+routes.post('/submit',function(req,res){
+	var 
+});*/
+router.post('/submit',function(req,res){
+	console.log(req);
+})
 module.exports = router;

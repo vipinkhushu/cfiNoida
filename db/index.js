@@ -22,9 +22,9 @@ var userSchema=mongoose.Schema({
 		type:String,
 		default:null
 	},
-	district:{
-		type:String,
-		default:null
+	loc: { 
+		type: { type: String },
+		coordinates: [ ] 
 	},
 	posts:[{
 		name:{
@@ -38,6 +38,10 @@ var userSchema=mongoose.Schema({
 		status:{
 			type:Number,
 			default:0
+		},
+		loc: { 
+			type: { type: String },
+			coordinates: [ ] 
 		},
 		contactNumber:{
 			type:Number,
@@ -62,3 +66,14 @@ db.on('error',console.error.bind(console,"connection error"));
 db.on('open',function(){
 	console.log('Yo Yo!');
 });
+exports.getStatsForMonth=function(req,res){
+	var yr=req.params.yr;
+	var month=req.params.month;
+	users.find({posts:{"$in":[{date:new Date(yr,month,1)}]}},function(err,doc){
+		console.log(doc);
+		if(err)
+			res.send(err);
+		else
+			res.render('statsByTime');
+	});
+}

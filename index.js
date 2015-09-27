@@ -2,7 +2,6 @@ var app=require('express')();
 var cpuCores=require('os').cpus().length;
 var cluster=require('cluster');
 var request=require('request');
-var db=require('./db');
 if(cluster.isMaster)
 {
 	console.log('Master cluster setting up ' + cpuCores + ' workers...');
@@ -21,6 +20,7 @@ if(cluster.isMaster)
 	var urlAadhar="https://ac.khoslalabs.com/hackgate/hackathon/auth/raw";
 	var express=require('express')
 	var app=express();
+	
 	bodyParser   = require('body-parser');
   	app.use(bodyParser.urlencoded({ extended: true }));
   	app.use(bodyParser.json());
@@ -28,7 +28,9 @@ if(cluster.isMaster)
   	app.use(express.static(__dirname + '/public'));
   	app.set('views', __dirname + '/views');
 	routes=require('./routes');
+	
 	app.use('/',routes);
+
 	app.use('/submit',routes);
 	app.listen(3000,function(){
         console.log('Process ' + process.pid + ' is listening to all incoming requests');

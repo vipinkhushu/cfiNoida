@@ -14,6 +14,6 @@ var found = {
 
 var data = [lost, found];
 
-var layout = {barmode: 'stack'};
+var layout = {barmode: 'stack',title: 'Stats By Location'};
 
 Plotly.newPlot('location', data, layout);

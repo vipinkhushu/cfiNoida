@@ -111,8 +111,10 @@ router.post('/sendUserData',function(req,res){
 	
     console.log(" int the  user" , req.body);
 	//res.render('/submitReport');
-    res.end(" fine");
+    
 	//res.end(JSON.stringify(" check here "));
+
+	res.end(JSON.stringify(req.body));
 });
 router.get('')
 

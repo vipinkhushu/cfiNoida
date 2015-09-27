@@ -65,7 +65,7 @@
 <div class="container">
 <h2>Report a lost person</h2>
 <div class="row">
-    <form class="col s12">
+    <form  action="/submit" method="post" class="col s12">
 	  <div class="row">
       <div class="col s6 red"><h5>Step 1:- Submit Details</h5></div>
       <div class="col s6"><h5>Step 2:- Confirm Data</h5></div>
@@ -96,10 +96,10 @@
 	            <label for="gender">Gender</label><br/></br/>
 
 	  <p>
-      <input name="gender" type="radio" id="test2" />
+      <input name="gender" value="male" type="radio" id="test2" />
       <label for="test2">Male</label>
   
-      <input class="with-gap" name="gender" type="radio" id="test3"  />
+      <input class="with-gap" value="female" name="gender" type="radio" id="test3"  />
       <label for="test3">Female</label>
     </p>
 	
@@ -144,14 +144,14 @@ $("#email_vip").val(getCookie("cmail"));
 
 </script>
 	   <div class="input-field col s12">
-          <input placeholder="Your Name" id="name_vip"  type="text" class="validate" disabled>
+          <input placeholder="Your Name" id="name_vip" name="yourname"  type="text" >
           <label for="full_name">Your Name</label>
         </div>
 	  <div class="input-field col s12">
-          <input placeholder="Your email" id="email_vip"  type="text" class="validate" disabled>
+          <input placeholder="Your email" id="email_vip" name="youremail" type="text">
           <label for="full_name">Your Name</label>
         </div>
-<button class="btn waves-effect waves-light" type="submit" name="action">Proceed
+<button class="btn waves-effect waves-light" type="submit">Proceed
     <i class="material-icons right">send</i>
   </button>
     </form>

@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Amber Alerts - Home</title>
+  <title>Amber Alerts - Report A Lost Person</title>
   <!-- Compiled and minified JavaScript -->
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 
@@ -25,7 +26,7 @@
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#">Forum</a></li>
       </ul>
-	  <ul class="right hide-on-med-and-down">
+	  <ul class="right hide-on-med-and-down active">
         <li>
   <a class='dropdown-button'  data-beloworigin="true" href='#' data-activates='dropdown1'>Statistics</a>
 
@@ -43,11 +44,11 @@
       </ul>
 	  
       <ul class="right hide-on-med-and-down">
-        <li><a href="/check">Report a lost person</a></li>
+        <li><a href="#">Report a lost person</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="/check">Report a lost person</a></li>
+        <li><a href="#">Report a lost person</a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Found Someone?</a></li>
@@ -59,65 +60,70 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Amber Alerts</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">For Reporting And Finding The Lost People Online</h5>
-      </div>
-      <div class="row center">
-        <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Report A Lost Person</a>
-        <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Found Someone?</a>
-        <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Check Stats</a>
 
-	 </div>
-      <br><br>
 
+<div class="container">
+<h2>Report a lost person</h2>
+<div class="row">
+    <form class="col s12">
+	  <div class="row">
+      <div class="col s6 red"><h5>Step 1:- Submit Details</h5></div>
+      <div class="col s6"><h5>Step 2:- Confirm Data</h5></div>
     </div>
-  </div>
+      
+        <div class="input-field col s12">
+          <input placeholder="Full Name" id="last_name" type="text" class="validate">
+          <label for="full_name">Full Name</label>
+        </div>
+      </div>
+	  <div class="row">
+	  <div class="row">
+	  
+        <div class="input-field col s12">
+          <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+        </div>
+	  </div>
+	  <div class="row">
+	  <div class="input-field col s12">
+	            <label for="gender">Gender</label><br/></br/>
 
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
+	  <p>
+      <input name="group1" type="radio" id="test2" />
+      <label for="test2">Male</label>
+  
+      <input class="with-gap" name="group1" type="radio" id="test3"  />
+      <label for="test3">Female</label>
+    </p>
+	
+	</div>
+	  </div>
       <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Report A Lost Person</h5>
-
-            <p class="light">Report the details of the lost person, Filling a small form with image, name , address and other details of the lost person you can create a post.We will help you circulating the missing reports to nearby people and Other networks like Facebook, Twitter etc with an effiective poster as well.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Found someone? Check for his post</h5>
-
-            <p class="light">We have public listing of all reported lost persons, One can simply go through it and check if the person found by him is matching with any post in our directory.If you find one, you can simply contact them with the phone numbers, address or email provided in the post.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Stats</h5>
-
-            <p class="light">We can understand how it feels when you are seperated from your loved ones, We provide the stats. Yearly, Monthly etc which shows how many cases are solved.</p>
-          </div>
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Pin Code</label>
         </div>
       </div>
-
-    </div>
-    <br><br>
-
-    <div class="section">
-
-    </div>
+      <div class="row">
+        <div class="input-field col s12">
+		  <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Textarea</label>
+        </div>
+      </div>
+<button class="btn waves-effect waves-light" type="submit" name="action">Proceed
+    <i class="material-icons right">send</i>
+  </button>
+    </form>
   </div>
+</div>
+  
 
   <footer class="page-footer orange">
     <div class="container">

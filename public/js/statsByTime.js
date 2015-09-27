@@ -15,5 +15,5 @@ var data = [
           }
         ];
        
-
-Plotly.newPlot('time', data);
+var layout = {title: 'Stats By Time'}
+Plotly.newPlot('time', data, layout);

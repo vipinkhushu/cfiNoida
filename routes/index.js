@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var async=require('async');
-console.log(async);
 var client = require('twilio')('AC527f6f20315f59a17999fd9eec6ebc93', '031bba489a2f19d928e0ab856f1e1265');
 var twitter = require('simple-twitter');
  twitter = new twitter('ESd7bNZnsmkf46EXDFO2Asw0T', //consumer key from twitter api

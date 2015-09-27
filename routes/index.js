@@ -120,6 +120,6 @@ routes.post('/submit',function(req,res){
 	var 
 });*/
 router.post('/submit',function(req,res){
-	console.log(req);
+	console.log(req.body);
 })
 module.exports = router;

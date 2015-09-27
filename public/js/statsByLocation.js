@@ -6,7 +6,7 @@ var lost = {
 };
 
 var found = {
-  x: ['Delhi', 'Lucknow', 'Guwahati', 'Mumbai'],
+   x: ['India', 'UK', 'Russia', 'Belarus'],
   y: [12, 18, 29, 19],
   name: 'Found',
   type: 'bar'

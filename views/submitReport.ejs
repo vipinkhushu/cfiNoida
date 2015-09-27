@@ -117,6 +117,36 @@
           <label for="textarea1">Textarea</label>
         </div>
       </div>
+	  <script>
+var x = document.cookie;
+//document.write(x);
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+//document.write(getCookie("cname"));
+//document.write(getCookie("cmail"));
+var value=getCookie("cname");
+$(document).ready(function(){
+	$("#name_vip").attr("value", getCookie("cname"));
+$("#email_vip").val(getCookie("cmail"));
+})
+
+</script>
+	   <div class="input-field col s12">
+          <input placeholder="Your Name" id="name_vip"  type="text" class="validate" disabled>
+          <label for="full_name">Your Name</label>
+        </div>
+	  <div class="input-field col s12">
+          <input placeholder="Your email" id="email_vip"  type="text" class="validate" disabled>
+          <label for="full_name">Your Name</label>
+        </div>
 <button class="btn waves-effect waves-light" type="submit" name="action">Proceed
     <i class="material-icons right">send</i>
   </button>

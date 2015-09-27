@@ -156,8 +156,8 @@
                     var name = response.name;
                     var email = response.email;
 
-                    document.cookie='"username= '+ name + '"';
-
+                    document.cookie='cname= '+ name;
+					document.cookie='cmail= '+ email;
                     var c= document.cookie;
 
                     console.log(c);

@@ -156,6 +156,12 @@
                     var name = response.name;
                     var email = response.email;
 
+                    document.cookie='"username= '+ name + '"';
+
+                    var c= document.cookie;
+
+                    console.log(c);
+
                    // var data =    JSON.parse(response);
                     console.log(name , email);
                     $.post('/sendUserData', { 'name' : name , 'email': email } ,  function(data , status){
@@ -163,7 +169,7 @@
                            console.log(data , " it is running good");
 
                            //window.open('/submitReport');
-						   window.location.replace('/submitReport');
+						              window.location.replace('/submitReport');
                     });
 
                 });

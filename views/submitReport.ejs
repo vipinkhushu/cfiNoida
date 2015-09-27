@@ -72,7 +72,7 @@
     </div>
       
         <div class="input-field col s12">
-          <input placeholder="Full Name" id="last_name" type="text" class="validate">
+          <input placeholder="Full Name" name="fullname" id="last_name" type="text" class="validate">
           <label for="full_name">Full Name</label>
         </div>
       </div>
@@ -86,7 +86,7 @@
         <input type="file">
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
+        <input name="image" class="file-path validate" type="text">
       </div>
     </div>
         </div>
@@ -96,10 +96,10 @@
 	            <label for="gender">Gender</label><br/></br/>
 
 	  <p>
-      <input name="group1" type="radio" id="test2" />
+      <input name="gender" type="radio" id="test2" />
       <label for="test2">Male</label>
   
-      <input class="with-gap" name="group1" type="radio" id="test3"  />
+      <input class="with-gap" name="gender" type="radio" id="test3"  />
       <label for="test3">Female</label>
     </p>
 	
@@ -107,16 +107,20 @@
 	  </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password"  name="pin" type="text" class="validate">
           <label for="password">Pin Code</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-		  <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Textarea</label>
+		  <textarea id="textarea1"  name="address" class="materialize-textarea"></textarea>
+          <label for="textarea1">Address</label>
         </div>
       </div>
+	          <div class="input-field col s12">
+          <input placeholder="District" id="distt" name="district" type="text" class="validate">
+          <label for="distt">District</label>
+        </div>
 	  <script>
 var x = document.cookie;
 //document.write(x);

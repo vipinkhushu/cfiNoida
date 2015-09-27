@@ -80,7 +80,7 @@ router.post('/submitR',function(req,res){
 		            if (!err) { // "err" is an error received during the request, if any
 		                // "responseData" is a JavaScript object containing data received from Twilio.
 		                // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
-		                // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+		                // http://w...content-available-to-author-only...o.com/docs/api/rest/sending-sms#example-1
 		                console.log("From "+responseData.from+ " To "+responseData.to); // outputs "+14506667788"
 		                console.log(responseData.body); // outputs "word to your mother.
 		                done();
@@ -120,6 +120,6 @@ routes.post('/submit',function(req,res){
 	var 
 });*/
 router.post('/submit',function(req,res){
-	console.log(req);
+	console.log(req.body);
 })
 module.exports = router;

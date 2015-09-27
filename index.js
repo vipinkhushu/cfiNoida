@@ -28,7 +28,10 @@ if(cluster.isMaster)
   	app.use(express.static(__dirname + '/public'));
   	app.set('views', __dirname + '/views');
 	routes=require('./routes');
-	
+  var db=require('./db');
+  // define the about route
+  app.get('/statsByTime',db.getStatsForMonth);
+  app.get('/statsByLocation',db.getStatsForLocation);
 	app.use('/',routes);
 
 	app.use('/submit',routes);

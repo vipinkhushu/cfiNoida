@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Amber Alerts - Report A Lost Person</title>
   <!-- Compiled and minified JavaScript -->
-  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+  <script src="http://a...content-available-to-author-only...n.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+  <script src="https://c...content-available-to-author-only...e.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="https://c...content-available-to-author-only...y.com/jquery-2.1.1.min.js"></script>
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://f...content-available-to-author-only...s.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
@@ -65,7 +65,7 @@
 <div class="container">
 <h2>Report a lost person</h2>
 <div class="row">
-    <form  action="/submit" method="post" class="col s12">
+    <form  action="/submit" method="post" id="myForm" class="col s12">
 	  <div class="row">
       <div class="col s6 red"><h5>Step 1:- Submit Details</h5></div>
       <div class="col s6"><h5>Step 2:- Confirm Data</h5></div>
@@ -121,6 +121,7 @@
           <input placeholder="District" id="distt" name="district" type="text" class="validate">
           <label for="distt">District</label>
         </div>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	  <script>
 var x = document.cookie;
 //document.write(x);
@@ -142,7 +143,26 @@ $(document).ready(function(){
 $("#email_vip").val(getCookie("cmail"));
 })
 
+$("#distt").blur(function(){
+	var geocoder = new google.maps.Geocoder();
+var address = $("#distt").val();
+
+
+
+geocoder.geocode( { 'address': address}, function(results, status) {
+
+if (status == google.maps.GeocoderStatus.OK) {
+    var latitude = results[0].geometry.location.lat();
+    var longitude = results[0].geometry.location.lng();
+    //alert("lat = " + latitude + "\n" + "long = " + longitude);
+	$("#long").val(longitude);
+	$("#latt").val(latitude);
+    } 
+});
+})
+
 </script>
+
 	   <div class="input-field col s12">
           <input placeholder="Your Name" id="name_vip" name="yourname"  type="text" >
           <label for="full_name">Your Name</label>
@@ -150,6 +170,14 @@ $("#email_vip").val(getCookie("cmail"));
 	  <div class="input-field col s12">
           <input placeholder="Your email" id="email_vip" name="youremail" type="text">
           <label for="full_name">Your Name</label>
+        </div>
+			   <div class="input-field col s12">
+          <input placeholder="long" id="long" name="long"  type="text" hidden>
+          
+        </div>
+	  <div class="input-field col s12">
+          <input placeholder="latt" id="latt" name="latt" type="text" hidden >
+          
         </div>
 <button class="btn waves-effect waves-light" type="submit">Proceed
     <i class="material-icons right">send</i>
@@ -197,7 +225,7 @@ $("#email_vip").val(getCookie("cmail"));
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://c...content-available-to-author-only...y.com/jquery-2.1.1.min.js"></script>
   <script src="../../bin/materialize.js"></script>
   <script src="js/init.js"></script>
 

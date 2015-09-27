@@ -107,6 +107,13 @@ router.get('/submitReport',function(req,res){
 router.get('/check',function(req,res){
 	res.render('checkfb');
 });
+router.post('/sendUserData',function(req,res){
+	
+    console.log(" int the  user" , req.body);
+	//res.render('/submitReport');
+    res.end(" fine");
+	//res.end(JSON.stringify(" check here "));
+});
 router.get('')
 
 module.exports = router;

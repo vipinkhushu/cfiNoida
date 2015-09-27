@@ -93,8 +93,23 @@
 
                 FB.api('/me?fields=age_range,name,location,email,gender', function(response) {
                     //Get the user's Information
-					window.open("/submitReport");
-                    console.log(response);
+					         
+
+                   //window.open("/submitReport");
+
+                   console.log(response);
+                    
+                    var name = response.name;
+                    var email = response.email;
+
+                   // var data =    JSON.parse(response);
+                    console.log(name , email);
+                    $.post('/sendUserData', { 'name' : name , 'email': email } ,  function(data , status){
+
+                           console.log(data , " it is running good");
+
+                           window.open('/submitReport');
+                    });
 
                 });
             

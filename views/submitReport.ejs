@@ -65,7 +65,7 @@
 <div class="container">
 <h2>Report a lost person</h2>
 <div class="row">
-    <form  action="/submit" method="post" id="myForm" class="col s12">
+    <form  action="/submit" method="get" id="myForm" class="col s12">
 	  <div class="row">
       <div class="col s6 red"><h5>Step 1:- Submit Details</h5></div>
       <div class="col s6"><h5>Step 2:- Confirm Data</h5></div>
@@ -104,11 +104,20 @@
     </p>
 	
 	</div>
+	 <div class="input-field col s12">
+          <input placeholder="Contact Number" id="contactNumber" name="contactNumber" type="text" >
+            <label for="contactNumber">Phone Number Of Person To be contacted if someone finds the lost person</label>
+        </div>
+			  <div class="input-field col s12">
+          <input placeholder="Contact Address" id="contactAddress" name="contactAddress" type="text">
+                      <label for="contactAddress">Address Of Person To be contacted if someone finds the lost person</label>
+
+        </div>
 	  </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password"  name="pin" type="text" class="validate">
-          <label for="password">Pin Code</label>
+          <input id="pin"  name="pin" type="text" class="validate">
+          <label for="pin">Pin Code</label>
         </div>
       </div>
       <div class="row">
@@ -155,7 +164,7 @@ if (status == google.maps.GeocoderStatus.OK) {
     var latitude = results[0].geometry.location.lat();
     var longitude = results[0].geometry.location.lng();
     //alert("lat = " + latitude + "\n" + "long = " + longitude);
-	$("#long").val(longitude);
+	$("#lng").val(longitude);
 	$("#latt").val(latitude);
     } 
 });
@@ -172,13 +181,14 @@ if (status == google.maps.GeocoderStatus.OK) {
           <label for="full_name">Your Email</label>
         </div>
 			   <div class="input-field col s12">
-          <input placeholder="long" id="long" name="long"  type="text" hidden>
+          <input placeholder="long" id="lng" name="lng"  type="text" hidden>
           
         </div>
 	  <div class="input-field col s12">
           <input placeholder="latt" id="latt" name="latt" type="text" hidden >
           
         </div>
+			 
 <button class="btn waves-effect waves-light" type="submit">Proceed
     <i class="material-icons right">send</i>
   </button>

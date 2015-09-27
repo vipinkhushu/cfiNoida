@@ -59,11 +59,16 @@
 
     <!-- Dropdown Structure -->
     <ul id='ddd' class='dropdown-content'>
-      <li><a href="statsByLocation">Delhi</a></li>
-      <li><a href="statsByLocation">Lucknow</a></li>
-      <li><a href="statsByLocation">Bangalore</a></li>
-      <li><a href="statsByLocation">Mumbai</a></li>
+      <li data-city='Delhi'><a href="#" onclick="open()">Delhi</a></li>
+      <li><a href="statsByLocation" onclick="open()">Lucknow</a></li>
+      <li><a href="statsByLocation" onclick="open()">Bangalore</a></li>
+      <li><a href="statsByLocation" onclick="open()">Mumbai</a></li>
     </ul>
-  </div>
+  </div> 
+  <script>
+  function open(){
+    window.open('statsForLocation/'+$(this).data('city'),_blank);
+  }
+  </script>
         
 </body>

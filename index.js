@@ -27,14 +27,14 @@ if(cluster.isMaster)
   	app.set('view engine', 'ejs');
   	app.use(express.static(__dirname + '/public'));
   	app.set('views', __dirname + '/views');
-	routes=require('./routes');
-  var db=require('./db');
+	   routes=require('./routes');
+      var db=require('./db');
   // define the about route
   app.get('/statsByTime',db.getStatsForMonth);
   app.get('/statsByLocation',db.getStatsForLocation);
+
 	app.use('/',routes);
 
-	app.use('/submit',routes);
 	app.listen(3000,function(){
         console.log('Process ' + process.pid + ' is listening to all incoming requests');
 	});
